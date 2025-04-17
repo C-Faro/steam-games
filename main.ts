@@ -1,3 +1,25 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite3 = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . b 5 b . . . 
+        . . . . . . . . . b 5 b . . . . 
+        . . . . . . b b b b b b . . . . 
+        . . . . . b b 5 5 5 5 5 b . . . 
+        . b b b b b 5 5 5 5 5 5 5 b . . 
+        . b d 5 b 5 5 5 5 5 5 5 5 b . . 
+        . . b 5 5 b 5 d 1 f 5 d 4 f . . 
+        . . b d 5 5 b 1 f f 5 4 4 c . . 
+        b b d b 5 5 5 d f b 4 4 4 4 4 b 
+        b d d c d 5 5 b 5 4 4 4 4 4 b . 
+        c d d d c c b 5 5 5 5 5 5 5 b . 
+        c b d d d d d 5 5 5 5 5 5 5 b . 
+        . c d d d d d d 5 5 5 5 5 d b . 
+        . . c b d d d d d 5 5 5 b b . . 
+        . . . c c c c c c c c b b . . . 
+        `, mySprite, 50, 50)
+})
+let mySprite3: Sprite = null
+let mySprite: Sprite = null
 scene.setBackgroundImage(img`
     fffffffcbccffffffffffcfbddddddddddd111111111111111111111111dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddbffcddffffffcfcfffff
     fffffffccffffcffffffbfddddddddd11111111111111111111111111111111ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddfccdbffffffffffffff
@@ -122,7 +144,7 @@ scene.setBackgroundImage(img`
     `)
 effects.blizzard.startScreenEffect()
 game.splash("It was a long, cold winter.")
-let mySprite = sprites.create(img`
+mySprite = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
     . . . f f f 2 2 2 2 f f f . . . 
@@ -167,4 +189,22 @@ let mySprite2 = sprites.create(img`
     ........................
     ........................
     `, SpriteKind.Player)
+mySprite3 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . b 5 5 b . . . 
+    . . . . . . b b b b b b . . . . 
+    . . . . . b b 5 5 5 5 5 b . . . 
+    . b b b b b 5 5 5 5 5 5 5 b . . 
+    . b d 5 b 5 5 5 5 5 5 5 5 b . . 
+    . . b 5 5 b 5 d 1 f 5 d 4 f . . 
+    . . b d 5 5 b 1 f f 5 4 4 c . . 
+    b b d b 5 5 5 d f b 4 4 4 4 b . 
+    b d d c d 5 5 b 5 4 4 4 4 4 4 b 
+    c d d d c c b 5 5 5 5 5 5 5 b . 
+    c b d d d d d 5 5 5 5 5 5 5 b . 
+    . c d d d d d d 5 5 5 5 5 d b . 
+    . . c b d d d d d 5 5 5 b b . . 
+    . . . c c c c c c c c b b . . . 
+    `, SpriteKind.Projectile)
 mySprite2.follow(mySprite)
