@@ -155,3 +155,4 @@ let mySprite = sprites.create(img`
     ....44444.......................
     `, SpriteKind.Player)
 music.play(music.stringPlayable("C D E F G A B C5 ", 120), music.PlaybackMode.UntilDone)
+controller.moveSprite(mySprite)
